@@ -1,0 +1,23 @@
+/* 
+  Localizable.strings
+  GutHubApp
+
+  Created by Kravchenko on 27.01.2018.
+  Copyright © 2018 WaveAccess. All rights reserved.
+*/
+
+"UserOrOwnerOrOrganizationPlaceholder" = "User, owner or organization name";
+"EnterUserOrOwnerOrOrganizationTitle" = "Enter user, owner or organization name";
+"SearchingNotFoundTitle" = "Users, owners or organizations not found";
+"SearchingFailedTitle" = "Unable to find repositories. Please try again later";
+"SearchingEmptyTitle" = "This user has no repositories yet";
+"NoName" = "No name";
+"NoDescription" = "No description";
+"NoRating" = "no";
+"NoForks" = "no";
+"NoUpdatedAtDate" = "no";
+"Stars" = "Stars: ";
+"Forks" = "forks: ";
+"UpdatedAt" = "updated: ";
+"Other" = "Other";
+
