@@ -7,11 +7,11 @@ The application supports iPhone/iPad and iOS >= 10.0 (in some places there are a
 ### Common architecture
 
 Application was developed with classical Apple Model-View-Controller approach. According to Apple MVC approach code was divided into next main parts:
-[View (table view cells, header, views)]
-[View Controller (UIVIewController subclasses, also contains business logic)]
-[Controller (AppDelegate)]
-[Model Controller (contains data logic, networking)]
-[Model (domain data classes and structures)]
+1. View (table view cells, header, views)
+2. View Controller (UIVIewController subclasses, also contains business logic)
+3. Controller (AppDelegate)
+4. Model Controller (contains data logic, networking)
+5. Model (domain data classes and structures)
 
 View, view controller, model controller and model parts are standard Apple entities (with their own responsibilities) and there are no special considerations about it but in case of model controller there are some notes.
 Instead of direct creation of model controller instance in view controller, model controllers chaining or shared (singleton) instance of this class usage I applied protocol-oriented approach.
