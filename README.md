@@ -55,3 +55,7 @@ There are some custom color and fonts in UI.
 ### More details
 
 You can see more details about my implementation in application code (it contains additional documentation).
+
+### License
+
+Please contact me to use this code in any form.
