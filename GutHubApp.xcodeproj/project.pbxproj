@@ -7,6 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		96272DA42020469C0017DF7B /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 96272DA22020469C0017DF7B /* Model.xcdatamodeld */; };
+		96272DAF202049110017DF7B /* Repository+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96272DAD202049110017DF7B /* Repository+CoreDataClass.swift */; };
+		96272DB0202049110017DF7B /* Repository+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96272DAE202049110017DF7B /* Repository+CoreDataProperties.swift */; };
+		965CA4AF2024494300D398AF /* RepositoriesTableViewController+NSFetchedResultsControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 965CA4AE2024494300D398AF /* RepositoriesTableViewController+NSFetchedResultsControllerDelegate.swift */; };
+		965CA4BD202449A700D398AF /* RepositoriesTableViewController+Searching.swift in Sources */ = {isa = PBXBuildFile; fileRef = 965CA4BC202449A700D398AF /* RepositoriesTableViewController+Searching.swift */; };
+		965CA4BF20244A8B00D398AF /* RespositoriesTableViewController+TableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 965CA4BE20244A8B00D398AF /* RespositoriesTableViewController+TableView.swift */; };
+		9676B1812023256700086938 /* OAuth2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9676B17A2023255400086938 /* OAuth2.framework */; };
+		9676B1822023256700086938 /* OAuth2.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 9676B17A2023255400086938 /* OAuth2.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		9682331820219D3A0053CAE4 /* Users.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9682331720219D3A0053CAE4 /* Users.swift */; };
+		9682331C2021A1980053CAE4 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9682331B2021A1980053CAE4 /* User.swift */; };
+		9682331E2021A2220053CAE4 /* ModelController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9682331D2021A2220053CAE4 /* ModelController.swift */; };
+		968233222021A85A0053CAE4 /* UsersTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 968233212021A85A0053CAE4 /* UsersTableViewController.swift */; };
 		96AB85A7201DD0980043F19C /* UIViewController+Alerts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96AB85A6201DD0980043F19C /* UIViewController+Alerts.swift */; };
 		96EE6BAD201C71F900B832DC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96EE6BAC201C71F900B832DC /* AppDelegate.swift */; };
 		96EE6BB2201C71F900B832DC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 96EE6BB0201C71F900B832DC /* Main.storyboard */; };
@@ -14,7 +26,6 @@
 		96EE6BB7201C71F900B832DC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 96EE6BB5201C71F900B832DC /* LaunchScreen.storyboard */; };
 		96EE6BC2201C71F900B832DC /* GutHubAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96EE6BC1201C71F900B832DC /* GutHubAppTests.swift */; };
 		96EE6BCD201C71F900B832DC /* GutHubAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96EE6BCC201C71F900B832DC /* GutHubAppUITests.swift */; };
-		96FB8DB5201C731C00B404C7 /* Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96FB8DB4201C731C00B404C7 /* Repository.swift */; };
 		96FB8DB7201C732900B404C7 /* Repositories.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96FB8DB6201C732900B404C7 /* Repositories.swift */; };
 		96FB8DC3201C740D00B404C7 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 96FB8DC2201C740D00B404C7 /* Localizable.strings */; };
 		96FB8DC5201C742F00B404C7 /* Localization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96FB8DC4201C742F00B404C7 /* Localization.swift */; };
@@ -26,6 +37,97 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		9676B1642023255400086938 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9676B0F52023255400086938 /* Keychain.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = C96BE5151C661147005EABC7;
+			remoteInfo = Keychain;
+		};
+		9676B1662023255400086938 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9676B0F52023255400086938 /* Keychain.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = C96BE51F1C661147005EABC7;
+			remoteInfo = KeychainTests;
+		};
+		9676B1682023255400086938 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9676B0F52023255400086938 /* Keychain.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = C96BE54A1C664025005EABC7;
+			remoteInfo = "Keychain watchOS";
+		};
+		9676B16A2023255400086938 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9676B0F52023255400086938 /* Keychain.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = C96BE5581C66409D005EABC7;
+			remoteInfo = "Keychain tvOS";
+		};
+		9676B16C2023255400086938 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9676B0F52023255400086938 /* Keychain.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = C96BE5681C66410E005EABC7;
+			remoteInfo = "Keychain OSX";
+		};
+		9676B16E2023255400086938 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9676B0F52023255400086938 /* Keychain.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = C96BE5711C66410E005EABC7;
+			remoteInfo = "Keychain OSXTests";
+		};
+		9676B1712023255400086938 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9676B1022023255400086938 /* KeychainDemo.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = C96BE58D1C6648A1005EABC7;
+			remoteInfo = KeychainDemo;
+		};
+		9676B1772023255400086938 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9676B0EB2023255400086938 /* OAuth2.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = EEE209471942772800736F1A;
+			remoteInfo = OAuth2macOS;
+		};
+		9676B1792023255400086938 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9676B0EB2023255400086938 /* OAuth2.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = EEDB8624193FAAE500C4EEA1;
+			remoteInfo = OAuth2iOS;
+		};
+		9676B17B2023255400086938 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9676B0EB2023255400086938 /* OAuth2.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 659854461C5B3BEA00237D39;
+			remoteInfo = OAuth2tvOS;
+		};
+		9676B17D2023255400086938 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9676B0EB2023255400086938 /* OAuth2.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = EEE209A219427DFE00736F1A;
+			remoteInfo = OAuth2Tests;
+		};
+		9676B17F2023256000086938 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9676B0EB2023255400086938 /* OAuth2.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = EEDB8623193FAAE500C4EEA1;
+			remoteInfo = OAuth2iOS;
+		};
+		9676B1832023256700086938 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9676B0EB2023255400086938 /* OAuth2.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = EEDB8623193FAAE500C4EEA1;
+			remoteInfo = OAuth2iOS;
+		};
 		96EE6BBE201C71F900B832DC /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 96EE6BA1201C71F900B832DC /* Project object */;
@@ -42,7 +144,119 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		9676B0DE2022FC1800086938 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				9676B1822023256700086938 /* OAuth2.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		96272DA32020469C0017DF7B /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
+		96272DAD202049110017DF7B /* Repository+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Repository+CoreDataClass.swift"; sourceTree = "<group>"; };
+		96272DAE202049110017DF7B /* Repository+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Repository+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		965CA4AE2024494300D398AF /* RepositoriesTableViewController+NSFetchedResultsControllerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RepositoriesTableViewController+NSFetchedResultsControllerDelegate.swift"; sourceTree = "<group>"; };
+		965CA4BC202449A700D398AF /* RepositoriesTableViewController+Searching.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RepositoriesTableViewController+Searching.swift"; sourceTree = "<group>"; };
+		965CA4BE20244A8B00D398AF /* RespositoriesTableViewController+TableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RespositoriesTableViewController+TableView.swift"; sourceTree = "<group>"; };
+		9676B0EA2023255400086938 /* OAuth2.xcworkspace */ = {isa = PBXFileReference; lastKnownFileType = wrapper.workspace; path = OAuth2.xcworkspace; sourceTree = "<group>"; };
+		9676B0EB2023255400086938 /* OAuth2.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = OAuth2.xcodeproj; sourceTree = "<group>"; };
+		9676B0EE2023255400086938 /* .swift-version */ = {isa = PBXFileReference; lastKnownFileType = text; path = ".swift-version"; sourceTree = "<group>"; };
+		9676B0F12023255400086938 /* GenericPasswordTypeExtensionsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenericPasswordTypeExtensionsTests.swift; sourceTree = "<group>"; };
+		9676B0F22023255400086938 /* KeychainItemTypeExtensionsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainItemTypeExtensionsTests.swift; sourceTree = "<group>"; };
+		9676B0F32023255400086938 /* KeychainTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainTests.swift; sourceTree = "<group>"; };
+		9676B0F42023255400086938 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9676B0F52023255400086938 /* Keychain.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = Keychain.xcodeproj; sourceTree = "<group>"; };
+		9676B0F92023255400086938 /* Protocols.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Protocols.png; sourceTree = "<group>"; };
+		9676B0FA2023255400086938 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		9676B0FB2023255400086938 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		9676B0FD2023255400086938 /* Keychain.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Keychain.h; sourceTree = "<group>"; };
+		9676B0FE2023255400086938 /* Keychain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Keychain.swift; sourceTree = "<group>"; };
+		9676B0FF2023255400086938 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9676B1022023255400086938 /* KeychainDemo.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = KeychainDemo.xcodeproj; sourceTree = "<group>"; };
+		9676B1062023255400086938 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		9676B1072023255400086938 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		9676B1092023255400086938 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		9676B10B2023255400086938 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		9676B10C2023255400086938 /* Keychain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Keychain.swift; sourceTree = "<group>"; };
+		9676B10D2023255400086938 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		9676B10E2023255400086938 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9676B10F2023255400086938 /* LICENSE.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE.txt; sourceTree = "<group>"; };
+		9676B1102023255400086938 /* SwiftKeychain.podspec */ = {isa = PBXFileReference; lastKnownFileType = text; path = SwiftKeychain.podspec; sourceTree = "<group>"; };
+		9676B1112023255400086938 /* CHANGELOG.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = CHANGELOG.md; sourceTree = "<group>"; };
+		9676B1142023255400086938 /* OAuth2PasswordGrantTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OAuth2PasswordGrantTests.swift; sourceTree = "<group>"; };
+		9676B1152023255400086938 /* OAuth2ClientCredentialsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OAuth2ClientCredentialsTests.swift; sourceTree = "<group>"; };
+		9676B1162023255400086938 /* OAuth2ImplicitGrantTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OAuth2ImplicitGrantTests.swift; sourceTree = "<group>"; };
+		9676B1172023255400086938 /* OAuth2RefreshTokenTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OAuth2RefreshTokenTests.swift; sourceTree = "<group>"; };
+		9676B1182023255400086938 /* OAuth2CodeGrantTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OAuth2CodeGrantTests.swift; sourceTree = "<group>"; };
+		9676B1192023255400086938 /* OAuth2DynRegTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OAuth2DynRegTests.swift; sourceTree = "<group>"; };
+		9676B11B2023255400086938 /* OAuth2DataLoaderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OAuth2DataLoaderTests.swift; sourceTree = "<group>"; };
+		9676B11D2023255400086938 /* OAuth2AuthRequestTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OAuth2AuthRequestTests.swift; sourceTree = "<group>"; };
+		9676B11E2023255400086938 /* OAuth2Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OAuth2Tests.swift; sourceTree = "<group>"; };
+		9676B11F2023255400086938 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9676B1202023255400086938 /* .gitmodules */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitmodules; sourceTree = "<group>"; };
+		9676B1212023255400086938 /* p2.OAuth2.podspec */ = {isa = PBXFileReference; lastKnownFileType = text; path = p2.OAuth2.podspec; sourceTree = "<group>"; };
+		9676B1222023255400086938 /* .jazzy.yaml */ = {isa = PBXFileReference; lastKnownFileType = text; path = .jazzy.yaml; sourceTree = "<group>"; };
+		9676B1232023255400086938 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		9676B1242023255400086938 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		9676B1252023255400086938 /* CONTRIBUTORS.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = CONTRIBUTORS.md; sourceTree = "<group>"; };
+		9676B1262023255400086938 /* CONTRIBUTING.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = CONTRIBUTING.md; sourceTree = "<group>"; };
+		9676B1272023255400086938 /* Package.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Package.swift; sourceTree = "<group>"; };
+		9676B12A2023255400086938 /* OAuth2CustomAuthorizer+macOS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OAuth2CustomAuthorizer+macOS.swift"; sourceTree = "<group>"; };
+		9676B12B2023255400086938 /* OAuth2Authorizer+macOS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OAuth2Authorizer+macOS.swift"; sourceTree = "<group>"; };
+		9676B12C2023255400086938 /* OAuth2WebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OAuth2WebViewController.swift; sourceTree = "<group>"; };
+		9676B12E2023255400086938 /* Keychain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Keychain.swift; sourceTree = "<group>"; };
+		9676B1302023255400086938 /* OAuth2Authorizer+iOS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OAuth2Authorizer+iOS.swift"; sourceTree = "<group>"; };
+		9676B1312023255400086938 /* OAuth2CustomAuthorizer+iOS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OAuth2CustomAuthorizer+iOS.swift"; sourceTree = "<group>"; };
+		9676B1322023255400086938 /* OAuth2WebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OAuth2WebViewController.swift; sourceTree = "<group>"; };
+		9676B1342023255400086938 /* OAuth2CustomAuthorizer+tvOS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OAuth2CustomAuthorizer+tvOS.swift"; sourceTree = "<group>"; };
+		9676B1352023255400086938 /* OAuth2Authorizer+tvOS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OAuth2Authorizer+tvOS.swift"; sourceTree = "<group>"; };
+		9676B1372023255400086938 /* OAuth2CodeGrantNoTokenType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OAuth2CodeGrantNoTokenType.swift; sourceTree = "<group>"; };
+		9676B1382023255400086938 /* OAuth2DynReg.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OAuth2DynReg.swift; sourceTree = "<group>"; };
+		9676B1392023255400086938 /* OAuth2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OAuth2.swift; sourceTree = "<group>"; };
+		9676B13A2023255400086938 /* OAuth2CodeGrantBasicAuth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OAuth2CodeGrantBasicAuth.swift; sourceTree = "<group>"; };
+		9676B13B2023255400086938 /* OAuth2CodeGrant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OAuth2CodeGrant.swift; sourceTree = "<group>"; };
+		9676B13C2023255400086938 /* OAuth2CodeGrantAzure.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OAuth2CodeGrantAzure.swift; sourceTree = "<group>"; };
+		9676B13D2023255400086938 /* OAuth2ClientCredentials.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OAuth2ClientCredentials.swift; sourceTree = "<group>"; };
+		9676B13E2023255400086938 /* OAuth2PasswordGrant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OAuth2PasswordGrant.swift; sourceTree = "<group>"; };
+		9676B13F2023255400086938 /* OAuth2ClientCredentialsReddit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OAuth2ClientCredentialsReddit.swift; sourceTree = "<group>"; };
+		9676B1402023255400086938 /* OAuth2ImplicitGrant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OAuth2ImplicitGrant.swift; sourceTree = "<group>"; };
+		9676B1412023255400086938 /* OAuth2CodeGrantLinkedIn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OAuth2CodeGrantLinkedIn.swift; sourceTree = "<group>"; };
+		9676B1422023255400086938 /* OAuth2CodeGrantFacebook.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OAuth2CodeGrantFacebook.swift; sourceTree = "<group>"; };
+		9676B1442023255400086938 /* OAuth2Securable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OAuth2Securable.swift; sourceTree = "<group>"; };
+		9676B1452023255400086938 /* OAuth2Error.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OAuth2Error.swift; sourceTree = "<group>"; };
+		9676B1462023255400086938 /* OAuth2Requestable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OAuth2Requestable.swift; sourceTree = "<group>"; };
+		9676B1472023255400086938 /* OAuth2AuthRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OAuth2AuthRequest.swift; sourceTree = "<group>"; };
+		9676B1482023255400086938 /* OAuth2Response.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OAuth2Response.swift; sourceTree = "<group>"; };
+		9676B1492023255400086938 /* OAuth2RequestPerformer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OAuth2RequestPerformer.swift; sourceTree = "<group>"; };
+		9676B14A2023255400086938 /* OAuth2DebugURLSessionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OAuth2DebugURLSessionDelegate.swift; sourceTree = "<group>"; };
+		9676B14B2023255400086938 /* extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = extensions.swift; sourceTree = "<group>"; };
+		9676B14C2023255400086938 /* OAuth2AuthConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OAuth2AuthConfig.swift; sourceTree = "<group>"; };
+		9676B14D2023255400086938 /* OAuth2Base.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OAuth2Base.swift; sourceTree = "<group>"; };
+		9676B14E2023255400086938 /* OAuth2CustomAuthorizerUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OAuth2CustomAuthorizerUI.swift; sourceTree = "<group>"; };
+		9676B14F2023255400086938 /* OAuth2ClientConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OAuth2ClientConfig.swift; sourceTree = "<group>"; };
+		9676B1502023255400086938 /* OAuth2AuthorizerUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OAuth2AuthorizerUI.swift; sourceTree = "<group>"; };
+		9676B1512023255400086938 /* OAuth2KeychainAccount.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OAuth2KeychainAccount.swift; sourceTree = "<group>"; };
+		9676B1522023255400086938 /* OAuth2Logger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OAuth2Logger.swift; sourceTree = "<group>"; };
+		9676B1542023255400086938 /* OAuth2DataLoaderSessionTaskDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OAuth2DataLoaderSessionTaskDelegate.swift; sourceTree = "<group>"; };
+		9676B1552023255400086938 /* OAuth2DataLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OAuth2DataLoader.swift; sourceTree = "<group>"; };
+		9676B1562023255400086938 /* OAuth2DataRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OAuth2DataRequest.swift; sourceTree = "<group>"; };
+		9676B1572023255400086938 /* LICENSE.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE.txt; sourceTree = "<group>"; };
+		9676B1592023255400086938 /* step-adding.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "step-adding.png"; sourceTree = "<group>"; };
+		9676B15A2023255400086938 /* step-linking.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "step-linking.png"; sourceTree = "<group>"; };
+		9676B15B2023255400086938 /* .travis.yml */ = {isa = PBXFileReference; lastKnownFileType = text; path = .travis.yml; sourceTree = "<group>"; };
+		9676B15C2023255400086938 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9676B15D2023255400086938 /* generate-docs.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = "generate-docs.sh"; sourceTree = "<group>"; };
+		9682331720219D3A0053CAE4 /* Users.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Users.swift; sourceTree = "<group>"; };
+		9682331B2021A1980053CAE4 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		9682331D2021A2220053CAE4 /* ModelController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelController.swift; sourceTree = "<group>"; };
+		968233212021A85A0053CAE4 /* UsersTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersTableViewController.swift; sourceTree = "<group>"; };
 		96AB85A6201DD0980043F19C /* UIViewController+Alerts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Alerts.swift"; sourceTree = "<group>"; };
 		96EE6BA9201C71F900B832DC /* GutHubApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GutHubApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		96EE6BAC201C71F900B832DC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -56,7 +270,6 @@
 		96EE6BC8201C71F900B832DC /* GutHubAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GutHubAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		96EE6BCC201C71F900B832DC /* GutHubAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GutHubAppUITests.swift; sourceTree = "<group>"; };
 		96EE6BCE201C71F900B832DC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		96FB8DB4201C731C00B404C7 /* Repository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Repository.swift; sourceTree = "<group>"; };
 		96FB8DB6201C732900B404C7 /* Repositories.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Repositories.swift; sourceTree = "<group>"; };
 		96FB8DC2201C740D00B404C7 /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
 		96FB8DC4201C742F00B404C7 /* Localization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Localization.swift; sourceTree = "<group>"; };
@@ -72,6 +285,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9676B1812023256700086938 /* OAuth2.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -92,12 +306,308 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9676B0662022FBD500086938 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				9676B0E92023255400086938 /* OAuth2 */,
+			);
+			path = Frameworks;
+			sourceTree = "<group>";
+		};
+		9676B0E92023255400086938 /* OAuth2 */ = {
+			isa = PBXGroup;
+			children = (
+				9676B0EA2023255400086938 /* OAuth2.xcworkspace */,
+				9676B0EB2023255400086938 /* OAuth2.xcodeproj */,
+				9676B0EE2023255400086938 /* .swift-version */,
+				9676B0EF2023255400086938 /* SwiftKeychain */,
+				9676B1112023255400086938 /* CHANGELOG.md */,
+				9676B1122023255400086938 /* Tests */,
+				9676B1202023255400086938 /* .gitmodules */,
+				9676B1212023255400086938 /* p2.OAuth2.podspec */,
+				9676B1222023255400086938 /* .jazzy.yaml */,
+				9676B1232023255400086938 /* README.md */,
+				9676B1242023255400086938 /* .gitignore */,
+				9676B1252023255400086938 /* CONTRIBUTORS.md */,
+				9676B1262023255400086938 /* CONTRIBUTING.md */,
+				9676B1272023255400086938 /* Package.swift */,
+				9676B1282023255400086938 /* Sources */,
+				9676B1572023255400086938 /* LICENSE.txt */,
+				9676B1582023255400086938 /* assets */,
+				9676B15B2023255400086938 /* .travis.yml */,
+				9676B15C2023255400086938 /* Info.plist */,
+				9676B15D2023255400086938 /* generate-docs.sh */,
+			);
+			path = OAuth2;
+			sourceTree = "<group>";
+		};
+		9676B0EC2023255400086938 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				9676B1782023255400086938 /* OAuth2.framework */,
+				9676B17A2023255400086938 /* OAuth2.framework */,
+				9676B17C2023255400086938 /* OAuth2.framework */,
+				9676B17E2023255400086938 /* OAuth2Tests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		9676B0EF2023255400086938 /* SwiftKeychain */ = {
+			isa = PBXGroup;
+			children = (
+				9676B0F02023255400086938 /* KeychainTests */,
+				9676B0F52023255400086938 /* Keychain.xcodeproj */,
+				9676B0F82023255400086938 /* Resources */,
+				9676B0FA2023255400086938 /* README.md */,
+				9676B0FB2023255400086938 /* .gitignore */,
+				9676B0FC2023255400086938 /* Keychain */,
+				9676B1002023255400086938 /* Examples */,
+				9676B10F2023255400086938 /* LICENSE.txt */,
+				9676B1102023255400086938 /* SwiftKeychain.podspec */,
+			);
+			path = SwiftKeychain;
+			sourceTree = "<group>";
+		};
+		9676B0F02023255400086938 /* KeychainTests */ = {
+			isa = PBXGroup;
+			children = (
+				9676B0F12023255400086938 /* GenericPasswordTypeExtensionsTests.swift */,
+				9676B0F22023255400086938 /* KeychainItemTypeExtensionsTests.swift */,
+				9676B0F32023255400086938 /* KeychainTests.swift */,
+				9676B0F42023255400086938 /* Info.plist */,
+			);
+			path = KeychainTests;
+			sourceTree = "<group>";
+		};
+		9676B0F62023255400086938 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				9676B1652023255400086938 /* Keychain.framework */,
+				9676B1672023255400086938 /* KeychainTests.xctest */,
+				9676B1692023255400086938 /* Keychain.framework */,
+				9676B16B2023255400086938 /* Keychain.framework */,
+				9676B16D2023255400086938 /* Keychain.framework */,
+				9676B16F2023255400086938 /* Keychain OSXTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		9676B0F82023255400086938 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				9676B0F92023255400086938 /* Protocols.png */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		9676B0FC2023255400086938 /* Keychain */ = {
+			isa = PBXGroup;
+			children = (
+				9676B0FD2023255400086938 /* Keychain.h */,
+				9676B0FE2023255400086938 /* Keychain.swift */,
+				9676B0FF2023255400086938 /* Info.plist */,
+			);
+			path = Keychain;
+			sourceTree = "<group>";
+		};
+		9676B1002023255400086938 /* Examples */ = {
+			isa = PBXGroup;
+			children = (
+				9676B1012023255400086938 /* KeychainDemo */,
+			);
+			path = Examples;
+			sourceTree = "<group>";
+		};
+		9676B1012023255400086938 /* KeychainDemo */ = {
+			isa = PBXGroup;
+			children = (
+				9676B1022023255400086938 /* KeychainDemo.xcodeproj */,
+				9676B1052023255400086938 /* KeychainDemo */,
+			);
+			path = KeychainDemo;
+			sourceTree = "<group>";
+		};
+		9676B1032023255400086938 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				9676B1722023255400086938 /* KeychainDemo.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		9676B1052023255400086938 /* KeychainDemo */ = {
+			isa = PBXGroup;
+			children = (
+				9676B1062023255400086938 /* ViewController.swift */,
+				9676B1072023255400086938 /* Assets.xcassets */,
+				9676B1082023255400086938 /* LaunchScreen.storyboard */,
+				9676B10A2023255400086938 /* Main.storyboard */,
+				9676B10C2023255400086938 /* Keychain.swift */,
+				9676B10D2023255400086938 /* AppDelegate.swift */,
+				9676B10E2023255400086938 /* Info.plist */,
+			);
+			path = KeychainDemo;
+			sourceTree = "<group>";
+		};
+		9676B1122023255400086938 /* Tests */ = {
+			isa = PBXGroup;
+			children = (
+				9676B1132023255400086938 /* FlowTests */,
+				9676B11A2023255400086938 /* DataLoaderTests */,
+				9676B11C2023255400086938 /* BaseTests */,
+				9676B11F2023255400086938 /* Info.plist */,
+			);
+			path = Tests;
+			sourceTree = "<group>";
+		};
+		9676B1132023255400086938 /* FlowTests */ = {
+			isa = PBXGroup;
+			children = (
+				9676B1142023255400086938 /* OAuth2PasswordGrantTests.swift */,
+				9676B1152023255400086938 /* OAuth2ClientCredentialsTests.swift */,
+				9676B1162023255400086938 /* OAuth2ImplicitGrantTests.swift */,
+				9676B1172023255400086938 /* OAuth2RefreshTokenTests.swift */,
+				9676B1182023255400086938 /* OAuth2CodeGrantTests.swift */,
+				9676B1192023255400086938 /* OAuth2DynRegTests.swift */,
+			);
+			path = FlowTests;
+			sourceTree = "<group>";
+		};
+		9676B11A2023255400086938 /* DataLoaderTests */ = {
+			isa = PBXGroup;
+			children = (
+				9676B11B2023255400086938 /* OAuth2DataLoaderTests.swift */,
+			);
+			path = DataLoaderTests;
+			sourceTree = "<group>";
+		};
+		9676B11C2023255400086938 /* BaseTests */ = {
+			isa = PBXGroup;
+			children = (
+				9676B11D2023255400086938 /* OAuth2AuthRequestTests.swift */,
+				9676B11E2023255400086938 /* OAuth2Tests.swift */,
+			);
+			path = BaseTests;
+			sourceTree = "<group>";
+		};
+		9676B1282023255400086938 /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				9676B1292023255400086938 /* macOS */,
+				9676B12D2023255400086938 /* SwiftKeychain */,
+				9676B12F2023255400086938 /* iOS */,
+				9676B1332023255400086938 /* tvOS */,
+				9676B1362023255400086938 /* Flows */,
+				9676B1432023255400086938 /* Base */,
+				9676B1532023255400086938 /* DataLoader */,
+			);
+			path = Sources;
+			sourceTree = "<group>";
+		};
+		9676B1292023255400086938 /* macOS */ = {
+			isa = PBXGroup;
+			children = (
+				9676B12A2023255400086938 /* OAuth2CustomAuthorizer+macOS.swift */,
+				9676B12B2023255400086938 /* OAuth2Authorizer+macOS.swift */,
+				9676B12C2023255400086938 /* OAuth2WebViewController.swift */,
+			);
+			path = macOS;
+			sourceTree = "<group>";
+		};
+		9676B12D2023255400086938 /* SwiftKeychain */ = {
+			isa = PBXGroup;
+			children = (
+				9676B12E2023255400086938 /* Keychain.swift */,
+			);
+			path = SwiftKeychain;
+			sourceTree = "<group>";
+		};
+		9676B12F2023255400086938 /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				9676B1302023255400086938 /* OAuth2Authorizer+iOS.swift */,
+				9676B1312023255400086938 /* OAuth2CustomAuthorizer+iOS.swift */,
+				9676B1322023255400086938 /* OAuth2WebViewController.swift */,
+			);
+			path = iOS;
+			sourceTree = "<group>";
+		};
+		9676B1332023255400086938 /* tvOS */ = {
+			isa = PBXGroup;
+			children = (
+				9676B1342023255400086938 /* OAuth2CustomAuthorizer+tvOS.swift */,
+				9676B1352023255400086938 /* OAuth2Authorizer+tvOS.swift */,
+			);
+			path = tvOS;
+			sourceTree = "<group>";
+		};
+		9676B1362023255400086938 /* Flows */ = {
+			isa = PBXGroup;
+			children = (
+				9676B1372023255400086938 /* OAuth2CodeGrantNoTokenType.swift */,
+				9676B1382023255400086938 /* OAuth2DynReg.swift */,
+				9676B1392023255400086938 /* OAuth2.swift */,
+				9676B13A2023255400086938 /* OAuth2CodeGrantBasicAuth.swift */,
+				9676B13B2023255400086938 /* OAuth2CodeGrant.swift */,
+				9676B13C2023255400086938 /* OAuth2CodeGrantAzure.swift */,
+				9676B13D2023255400086938 /* OAuth2ClientCredentials.swift */,
+				9676B13E2023255400086938 /* OAuth2PasswordGrant.swift */,
+				9676B13F2023255400086938 /* OAuth2ClientCredentialsReddit.swift */,
+				9676B1402023255400086938 /* OAuth2ImplicitGrant.swift */,
+				9676B1412023255400086938 /* OAuth2CodeGrantLinkedIn.swift */,
+				9676B1422023255400086938 /* OAuth2CodeGrantFacebook.swift */,
+			);
+			path = Flows;
+			sourceTree = "<group>";
+		};
+		9676B1432023255400086938 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				9676B1442023255400086938 /* OAuth2Securable.swift */,
+				9676B1452023255400086938 /* OAuth2Error.swift */,
+				9676B1462023255400086938 /* OAuth2Requestable.swift */,
+				9676B1472023255400086938 /* OAuth2AuthRequest.swift */,
+				9676B1482023255400086938 /* OAuth2Response.swift */,
+				9676B1492023255400086938 /* OAuth2RequestPerformer.swift */,
+				9676B14A2023255400086938 /* OAuth2DebugURLSessionDelegate.swift */,
+				9676B14B2023255400086938 /* extensions.swift */,
+				9676B14C2023255400086938 /* OAuth2AuthConfig.swift */,
+				9676B14D2023255400086938 /* OAuth2Base.swift */,
+				9676B14E2023255400086938 /* OAuth2CustomAuthorizerUI.swift */,
+				9676B14F2023255400086938 /* OAuth2ClientConfig.swift */,
+				9676B1502023255400086938 /* OAuth2AuthorizerUI.swift */,
+				9676B1512023255400086938 /* OAuth2KeychainAccount.swift */,
+				9676B1522023255400086938 /* OAuth2Logger.swift */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+		9676B1532023255400086938 /* DataLoader */ = {
+			isa = PBXGroup;
+			children = (
+				9676B1542023255400086938 /* OAuth2DataLoaderSessionTaskDelegate.swift */,
+				9676B1552023255400086938 /* OAuth2DataLoader.swift */,
+				9676B1562023255400086938 /* OAuth2DataRequest.swift */,
+			);
+			path = DataLoader;
+			sourceTree = "<group>";
+		};
+		9676B1582023255400086938 /* assets */ = {
+			isa = PBXGroup;
+			children = (
+				9676B1592023255400086938 /* step-adding.png */,
+				9676B15A2023255400086938 /* step-linking.png */,
+			);
+			path = assets;
+			sourceTree = "<group>";
+		};
 		96EE6BA0201C71F900B832DC = {
 			isa = PBXGroup;
 			children = (
 				96EE6BAB201C71F900B832DC /* GutHubApp */,
 				96EE6BC0201C71F900B832DC /* GutHubAppTests */,
 				96EE6BCB201C71F900B832DC /* GutHubAppUITests */,
+				9676B0662022FBD500086938 /* Frameworks */,
 				96EE6BAA201C71F900B832DC /* Products */,
 			);
 			sourceTree = "<group>";
@@ -160,6 +670,10 @@
 			isa = PBXGroup;
 			children = (
 				96FB8DC6201C755B00B404C7 /* RepositoriesTableViewController.swift */,
+				965CA4BE20244A8B00D398AF /* RespositoriesTableViewController+TableView.swift */,
+				965CA4BC202449A700D398AF /* RepositoriesTableViewController+Searching.swift */,
+				965CA4AE2024494300D398AF /* RepositoriesTableViewController+NSFetchedResultsControllerDelegate.swift */,
+				968233212021A85A0053CAE4 /* UsersTableViewController.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -167,7 +681,10 @@
 		96EE6BDE201C728700B832DC /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				96FB8DB4201C731C00B404C7 /* Repository.swift */,
+				9682331B2021A1980053CAE4 /* User.swift */,
+				96272DAD202049110017DF7B /* Repository+CoreDataClass.swift */,
+				96272DAE202049110017DF7B /* Repository+CoreDataProperties.swift */,
+				96272DA22020469C0017DF7B /* Model.xcdatamodeld */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -175,7 +692,9 @@
 		96EE6BDF201C729C00B832DC /* Model Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				9682331D2021A2220053CAE4 /* ModelController.swift */,
 				96FB8DB6201C732900B404C7 /* Repositories.swift */,
+				9682331720219D3A0053CAE4 /* Users.swift */,
 			);
 			path = "Model Controllers";
 			sourceTree = "<group>";
@@ -234,10 +753,13 @@
 				96EE6BA5201C71F900B832DC /* Sources */,
 				96EE6BA6201C71F900B832DC /* Frameworks */,
 				96EE6BA7201C71F900B832DC /* Resources */,
+				9676B0DE2022FC1800086938 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				9676B1802023256000086938 /* PBXTargetDependency */,
+				9676B1842023256700086938 /* PBXTargetDependency */,
 			);
 			name = GutHubApp;
 			productName = GutHubApp;
@@ -313,10 +835,25 @@
 			knownRegions = (
 				en,
 				Base,
+				ja,
 			);
 			mainGroup = 96EE6BA0201C71F900B832DC;
 			productRefGroup = 96EE6BAA201C71F900B832DC /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 9676B0F62023255400086938 /* Products */;
+					ProjectRef = 9676B0F52023255400086938 /* Keychain.xcodeproj */;
+				},
+				{
+					ProductGroup = 9676B1032023255400086938 /* Products */;
+					ProjectRef = 9676B1022023255400086938 /* KeychainDemo.xcodeproj */;
+				},
+				{
+					ProductGroup = 9676B0EC2023255400086938 /* Products */;
+					ProjectRef = 9676B0EB2023255400086938 /* OAuth2.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				96EE6BA8201C71F900B832DC /* GutHubApp */,
@@ -325,6 +862,86 @@
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		9676B1652023255400086938 /* Keychain.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = Keychain.framework;
+			remoteRef = 9676B1642023255400086938 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		9676B1672023255400086938 /* KeychainTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = KeychainTests.xctest;
+			remoteRef = 9676B1662023255400086938 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		9676B1692023255400086938 /* Keychain.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = Keychain.framework;
+			remoteRef = 9676B1682023255400086938 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		9676B16B2023255400086938 /* Keychain.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = Keychain.framework;
+			remoteRef = 9676B16A2023255400086938 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		9676B16D2023255400086938 /* Keychain.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = Keychain.framework;
+			remoteRef = 9676B16C2023255400086938 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		9676B16F2023255400086938 /* Keychain OSXTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = "Keychain OSXTests.xctest";
+			remoteRef = 9676B16E2023255400086938 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		9676B1722023255400086938 /* KeychainDemo.app */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.application;
+			path = KeychainDemo.app;
+			remoteRef = 9676B1712023255400086938 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		9676B1782023255400086938 /* OAuth2.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = OAuth2.framework;
+			remoteRef = 9676B1772023255400086938 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		9676B17A2023255400086938 /* OAuth2.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = OAuth2.framework;
+			remoteRef = 9676B1792023255400086938 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		9676B17C2023255400086938 /* OAuth2.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = OAuth2.framework;
+			remoteRef = 9676B17B2023255400086938 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		9676B17E2023255400086938 /* OAuth2Tests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = OAuth2Tests.xctest;
+			remoteRef = 9676B17D2023255400086938 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		96EE6BA7201C71F900B832DC /* Resources */ = {
@@ -359,15 +976,24 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				965CA4BF20244A8B00D398AF /* RespositoriesTableViewController+TableView.swift in Sources */,
 				96FB8DC5201C742F00B404C7 /* Localization.swift in Sources */,
 				96FB8DCA201C999B00B404C7 /* TableView.swift in Sources */,
+				968233222021A85A0053CAE4 /* UsersTableViewController.swift in Sources */,
 				96FB8DD7201C9ADE00B404C7 /* RepositoryTableViewCell.swift in Sources */,
 				96AB85A7201DD0980043F19C /* UIViewController+Alerts.swift in Sources */,
 				96FB8DC7201C755B00B404C7 /* RepositoriesTableViewController.swift in Sources */,
+				965CA4BD202449A700D398AF /* RepositoriesTableViewController+Searching.swift in Sources */,
+				96272DAF202049110017DF7B /* Repository+CoreDataClass.swift in Sources */,
+				9682331E2021A2220053CAE4 /* ModelController.swift in Sources */,
+				9682331C2021A1980053CAE4 /* User.swift in Sources */,
 				96FB8DD9201C9E1A00B404C7 /* UITableViewController+SearchingActivity.swift in Sources */,
+				965CA4AF2024494300D398AF /* RepositoriesTableViewController+NSFetchedResultsControllerDelegate.swift in Sources */,
 				96FB8DB7201C732900B404C7 /* Repositories.swift in Sources */,
 				96EE6BAD201C71F900B832DC /* AppDelegate.swift in Sources */,
-				96FB8DB5201C731C00B404C7 /* Repository.swift in Sources */,
+				9682331820219D3A0053CAE4 /* Users.swift in Sources */,
+				96272DB0202049110017DF7B /* Repository+CoreDataProperties.swift in Sources */,
+				96272DA42020469C0017DF7B /* Model.xcdatamodeld in Sources */,
 				96FB8DE8201CC79E00B404C7 /* RepositoryLanguageHeader.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -391,6 +1017,16 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		9676B1802023256000086938 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = OAuth2iOS;
+			targetProxy = 9676B17F2023256000086938 /* PBXContainerItemProxy */;
+		};
+		9676B1842023256700086938 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = OAuth2iOS;
+			targetProxy = 9676B1832023256700086938 /* PBXContainerItemProxy */;
+		};
 		96EE6BBF201C71F900B832DC /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 96EE6BA8201C71F900B832DC /* GutHubApp */;
@@ -404,6 +1040,22 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		9676B1082023255400086938 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				9676B1092023255400086938 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		9676B10A2023255400086938 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				9676B10B2023255400086938 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
 		96EE6BB0201C71F900B832DC /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -533,6 +1185,7 @@
 		96EE6BD2201C71F900B832DC /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 8WX23BUD23;
@@ -549,6 +1202,7 @@
 		96EE6BD3201C71F900B832DC /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 8WX23BUD23;
@@ -668,6 +1322,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		96272DA22020469C0017DF7B /* Model.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				96272DA32020469C0017DF7B /* Model.xcdatamodel */,
+			);
+			currentVersion = 96272DA32020469C0017DF7B /* Model.xcdatamodel */;
+			path = Model.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 96EE6BA1201C71F900B832DC /* Project object */;
 }

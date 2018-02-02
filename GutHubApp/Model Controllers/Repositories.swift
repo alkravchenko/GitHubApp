@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import CoreData
+import OAuth2
 
 //MARK: - Protocol-oriented implementation of Repositories model controller functionality
 
@@ -33,7 +35,7 @@ class RepositoriesModelController {
     /// Shared `Repositories model` controller object (singleton). Can not be accesses outside this file (for preventing code connectivity problems). You shoul access to this property only via `Respository` protocol implementation.
     fileprivate static let shared = RepositoriesModelController()
 
-    /// Error enum
+    /// Errors enum
     enum RepositoriesError: Error {
         case emptyUser
         case requestFormat
@@ -41,6 +43,8 @@ class RepositoriesModelController {
         case responseFormat
         case dataToObjectFailed
         case userNotFound
+        case containerNotInitializaed
+        case notAuthorized
     }
     
     /// Session for searching requests
@@ -57,26 +61,48 @@ class RepositoriesModelController {
     /// Current data task
     private var searchingTask: URLSessionDataTask?
     
-    /// Result enum
-    enum SearchingResult {
-        case finished
-        case cancelled
-    }
-    
     /// Helper for objects mapping
-    func objects<T>(from data: Data) throws -> [T] where T : Decodable {
+    func insertRepositories(from data: Data, to context: NSManagedObjectContext) throws {
+        guard let _ = persistentContainer else { throw RepositoriesError.containerNotInitializaed }
+        
         guard let jsonObjects = try JSONSerialization.jsonObject(with: data) as? [[String: Any]] else { throw RepositoriesError.dataToObjectFailed }
 
-        var objects = [T]()
         let decoder = JSONDecoder()
+        
+        guard let contextKey = CodingUserInfoKey.managedObjectContext else { fatalError("Incorrect application configuration") }
+        
+        decoder.userInfo[contextKey] = context
         decoder.dateDecodingStrategy = .iso8601
+        let request: NSFetchRequest<Repository> = Repository.fetchRequest()
         
         for jsonObject in jsonObjects {
+            guard let identifier = jsonObject["id"] as? Int64 else { throw RepositoriesError.dataToObjectFailed }
+            
             let objectData = try JSONSerialization.data(withJSONObject: jsonObject)
-            let object = try decoder.decode(T.self, from: objectData)
-            objects.append(object)
+            var repository = try decoder.decode(Repository.self, from: objectData)
+
+            request.predicate = NSPredicate(format: "\(#keyPath(Repository.identifier)) = %@", identifier as NSNumber)
+            let result = try managedObjectContext.fetch(request)
+
+            if let alreadyExisitingObject = result.first {
+                alreadyExisitingObject.update(from: repository)
+                repository = alreadyExisitingObject
+            } else {
+                managedObjectContext.insert(repository)
+            }
         }
-        return objects
+    }
+    
+    func updateRepositories(from data: Data, in context: NSManagedObjectContext) throws {
+        /// Precondition
+        guard let _ = persistentContainer else { throw RepositoriesError.containerNotInitializaed }
+
+        do {
+            try self.insertRepositories(from: data, to: context)
+        } catch {
+            throw RepositoriesError.dataToObjectFailed
+        }
+
     }
     
     /// Helper for get link headers
@@ -101,21 +127,45 @@ class RepositoriesModelController {
         return nil
     }
     
+    
     /// Method for repositories searching
-    func searchRepositories(for user: String, completion: @escaping (_ result: SearchingResult, _ repositories: [Repository]?, _ error: Error?) -> ()) {
+    func updateRepositories(for user: String, completion: @escaping (_ result: SearchingResult, _ error: Error?) -> ()) {
+        guard let persistentContainer = persistentContainer else { completion(.finished, RepositoriesError.containerNotInitializaed); return }
+
         /// Searching supports only not empty strings
-        guard !user.isEmpty else { completion(.finished, nil, RepositoriesError.emptyUser); return }
+        guard !user.isEmpty else { completion(.finished, RepositoriesError.emptyUser); return }
+
 
         var repositories = [Repository]()
-
+        
         /// Prepare request data. Use `users/:username/repos` because Search API has limit for 1000 results and, for example, Google has more then 1000 repositories
         /// This implementation has no authorization and has limit to 60 requests per hour (authorization planned in next versions)
-        guard var urlComponents = URLComponents(string: "https://api.github.com/users/\(user)/repos") else { completion(.finished, nil, RepositoriesError.requestFormat); return }
+        guard var urlComponents = URLComponents(string: "https://api.github.com/users/\(user)/repos") else { completion(.finished, RepositoriesError.requestFormat); return }
         ///Max per_page value for `repos` request
         let perPage = 100
         var query = "per_page=\(perPage)"
+        if let accessToken = AppDelegate.shared.accessToken {
+            query.append("&access_token=\(accessToken)")
+        }
         urlComponents.query = query
-        guard var searchingURL = urlComponents.url else { completion(.finished, nil, RepositoriesError.requestFormat); return }
+        guard var searchingURL = urlComponents.url else { completion(.finished, RepositoriesError.requestFormat); return }
+
+        /// Managed object context and undo manager intitilization
+        let managedObjectContext = persistentContainer.viewContext
+        
+        managedObjectContext.undoManager = UndoManager()
+        managedObjectContext.undoManager?.beginUndoGrouping()
+
+        let undoAndClearUndoManager = {
+            managedObjectContext.undoManager?.endUndoGrouping()
+            managedObjectContext.undoManager?.undo()
+            managedObjectContext.undoManager = nil
+        }
+
+        let clearUndoManager = {
+            managedObjectContext.undoManager?.endUndoGrouping()
+            managedObjectContext.undoManager = nil
+        }
 
         /// Recursive solution for pagination
         func goToNextRepositoriesPage() {
@@ -141,28 +191,38 @@ class RepositoriesModelController {
                         /// Valid response
                         
                         do {
-                            let responseRepositories: [Repository] = try self.objects(from: data)
-                            repositories.append(contentsOf: responseRepositories)
+                            try self.updateRepositories(from: data, in: managedObjectContext)
                             if let nextURL = self.nextRepositoriesPageURL(from: response) {
+                                /// Go to next page
                                 searchingURL = nextURL
                                 goToNextRepositoriesPage()
                             } else {
-                                completion(.finished, repositories, nil)
+                                /// All data fetched and can be saved
+                                try managedObjectContext.save()
+                                clearUndoManager()
+                                completion(.finished, nil)
                             }
                         }  catch {
-                            completion(.finished, nil, RepositoriesError.responseFormat)
+                            undoAndClearUndoManager()
+                            completion(.finished, RepositoriesError.responseFormat)
                         }
                         
                     } else {
+                        undoAndClearUndoManager()
                         ///Not valid response
+                        
                         if let response = response as? HTTPURLResponse, response.statusCode == 404 {
-                            completion(.finished, nil, RepositoriesError.userNotFound)
+                            /// User not found
+                            completion(.finished, RepositoriesError.userNotFound)
+                        } else if let response = response as? HTTPURLResponse, response.statusCode == 401 {
+                            /// Access token was revoked
+                            completion(.finished, RepositoriesError.notAuthorized)
+                        } else if let error = error, error._domain == NSURLErrorDomain, error._code == NSURLErrorCancelled {
+                            /// Request was revoked
+                            completion(.cancelled, error)
                         } else {
-                            if let error = error, error._domain == NSURLErrorDomain, error._code == NSURLErrorCancelled {
-                                completion(.cancelled, nil, error)
-                            } else {
-                                completion(.finished, nil, error ?? RepositoriesError.requestFailed)
-                            }
+                            /// Common error
+                            completion(.finished, error ?? RepositoriesError.requestFailed)
                         }
                     }
                 }
@@ -175,4 +235,34 @@ class RepositoriesModelController {
         goToNextRepositoriesPage()
 
     }
+    
+    
+    // MARK: - Core Data Srack
+    
+    /// Core Data Stack Initilization
+    
+    /// Managed object context
+    var managedObjectContext: NSManagedObjectContext {
+        /// Precondition
+        guard let persistentContainer = persistentContainer else { fatalError("Context usage before core data stack initializartion") }
+
+        return persistentContainer.viewContext
+    }
+    
+    private var persistentContainer: NSPersistentContainer?
+    
+    func initialize(completion: @escaping (_ error: Error?) -> ()) {
+        /// Precondition
+        guard persistentContainer == nil else { completion(nil); return }
+        
+        /// Core Data container initizalition
+        let container = NSPersistentContainer(name: "Model")
+        container.loadPersistentStores { storeDescription, error in
+            if error == nil {
+                self.persistentContainer = container
+            }
+            completion(error)
+        }
+    }
+    
 }

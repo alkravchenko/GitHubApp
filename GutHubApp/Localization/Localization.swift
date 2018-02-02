@@ -32,4 +32,7 @@ enum LocalizationKey: String {
     case forks = "Forks"
     case updatedAt = "UpdatedAt"
     case other = "Other"
+    case modelInitizalitionErrorTitle = "Error while application initizalition."
+    case modelInitizalitionErrorMessage = "The applcation will not work properly"
+    case noUsers = "NoUsers"
 }

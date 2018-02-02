@@ -16,6 +16,7 @@ import UIKit
 enum ReuseIdentifier: String {
     case repository = "Repository"
     case language = "Language"
+    case user = "User"
 }
 
 //MARK: - Extension for dequeues family methods with constants instead of plain string

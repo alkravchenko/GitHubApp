@@ -8,7 +8,7 @@
 
 "UserOrOwnerOrOrganizationPlaceholder" = "User, owner or organization name";
 "EnterUserOrOwnerOrOrganizationTitle" = "Enter user, owner or organization name";
-"SearchingNotFoundTitle" = "Users, owners or organizations not found";
+"SearchingNotFoundTitle" = "User, owner or organization not found";
 "SearchingFailedTitle" = "Unable to find repositories. Please try again later";
 "SearchingEmptyTitle" = "This user has no repositories yet";
 "NoName" = "No name";
@@ -20,4 +20,6 @@
 "Forks" = "forks: ";
 "UpdatedAt" = "updated: ";
 "Other" = "Other";
-
+"ModelInitizalitionErrorTitle" = "Error while application initizalition.";
+"ModelInitizalitionErrorMessage" = "The applcation will not work properly";
+"NoUsers" = "Users not found";

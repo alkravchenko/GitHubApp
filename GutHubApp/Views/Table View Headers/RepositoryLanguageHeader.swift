@@ -10,6 +10,7 @@ import UIKit
 
 class RepositoryLanguageHeader: UITableViewHeaderFooterView {
     
+    /// Customize header appearance
     override func layoutSubviews() {
         super.layoutSubviews()
         textLabel?.font = UIFont.systemFont(ofSize: 21, weight: .semibold)

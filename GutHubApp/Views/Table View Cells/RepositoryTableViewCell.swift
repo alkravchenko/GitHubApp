@@ -9,6 +9,7 @@
 import UIKit
 
 class RepositoryTableViewCell: UITableViewCell {
+    
     @IBOutlet weak var nameTitle: UILabel!
     @IBOutlet weak var descriptionTitle: UILabel!
     @IBOutlet weak var ratingTitle: UILabel!

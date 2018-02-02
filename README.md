@@ -2,7 +2,7 @@
 The application supports iPhone/iPad and iOS >= 10.0 (in some places there are availability checks). Code was developed with Swift 4.0 stable version shipped with XCode 9.2.
 
 
-## Notes about first part of test task.
+## Notes about first part of test task
 
 ### Common architecture
 
@@ -51,6 +51,44 @@ Alerts shows also via protocol-oriented approach (see code).
 
 UI mainly exists in storyboards. For Repositories theres is custom table view cell and section header Table view cell has dynamic height for labels and also contains stack view.
 There are some custom color and fonts in UI.
+
+## Notes about second part of test task
+
+### Authorization
+
+In the second part of test task authorization was added (to go away from some limitaions). Authorization was implemented via GitHub OAuth and OAuth2 third-party library (https://github.com/p2/OAuth2).
+Authorization logic has some limitations but is enough for our task. Authorization process is started while application launching (via presenting SFSafariViewController).
+You can cancel authorization (in this case application will work with 60 request per hour limit).
+If you authorized but access token was revoked then next request will fail and authorization flow will repeat. Authorization is implemented in AppDelegate.
+
+
+### Caching result for offline access  
+Core Data was selected as framework by default for caching database style data.
+Already existing class `Repository` was adopted for Core Data (subclassing from NSManagedObject, custom `Codable` implementation, custom attribute accessors for Swift `Int64` and Optional type support).
+When request is finished its result saved in Core Data. I use Core Data undo manager logic for revoke objects from context if error occured.
+View controller implements NSFetchedResultsController logic. View controller updates its content if NSFetchedResultsController notifies about changes.
+In any case request also will be sent (request will update Core Data with new data) asynchronously.
+In this implementation user always see cached data and this data always updated asynchronously.
+I did implementation more advanced - cached data visible not only for offline mode. I think it is more user-friendly approach.
+Requests result saving to Core Data performed in main thread. In ideal case we should create background managed object context for this purpose.
+But now repositories count is not very large (with exception of Google) and i did not want to do logic too complex (for demostration purpose). In next iterations we can implement this addition (background context).
+
+
+### Typeahead searching for user
+
+For typeahead searching new class `User` was added. It also implements `Codable` protocol. For users searching new model controller `UsersModelController` was added.
+This model controller is similiar to `RepostioriesModelController` with some changes according to another entity type (for example, GitHub Search API is used for users searching).
+`UsersModelController` is used in the same view controller as repositories one (with the same Protocol-oriented approach) but request results is displayed in special results table view controller.
+There is limit for 100 users in searching and I think this is enough for such functionality.
+
+
+### Some notes
+
+Now `RepositoriesTableViewController` has about 350 lines of code but it is divided to different extensions in different files (it is standart approach to avoid large files/classes in Swift).
+Thats why now we have no big problem with too large class. Also now view controller has no large amount of responsibilities.
+But if view controller willl become more complex then we should divide this view controller to several controllers for responsibilities separation.
+For example, we can make «controllers-delegates» and our table view controller will become proxy. But now it is not necessary.
+Also there are some code that can be optimized (for example deleting some code duplication).
 
 ### More details
 

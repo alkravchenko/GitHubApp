@@ -1,3 +1,4 @@
+
 //
 //  AppDelegate.swift
 //  GutHubApp
@@ -7,12 +8,18 @@
 //
 
 import UIKit
+import OAuth2
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
+    /// App delegate
+    static var shared: AppDelegate {
+        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { fatalError("Incorrect application configuration") }
+        return appDelegate
+    }
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
@@ -39,6 +46,37 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func applicationWillTerminate(_ application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+    }
+    
+    // MARK: - OAuth Athorization
+
+    private(set) var oauth: OAuth2CodeGrant?
+    private(set) var accessToken: String?
+    
+    func authorize(from viewController: UIViewController) {
+        accessToken = nil
+        AppDelegate.shared.oauth = OAuth2CodeGrant(settings: [
+            "client_id": "6102e1d5e4a8ea8eb006",
+            "client_secret": "0b6a110526a5600f48cc1af89db838fbf03bffc7",
+            "authorize_uri": "https://github.com/login/oauth/authorize",
+            "token_uri": "https://github.com/login/oauth/access_token",
+            "redirect_uris": ["githubapp://authorize"],
+            "scope": "public_repo",
+            "secret_in_body": true,
+            "keychain": false,
+            ] as OAuth2JSON)
+        
+        AppDelegate.shared.oauth?.authorizeEmbedded(from: viewController) { authParameters, error in
+            if let parameters = authParameters, let accessToken = parameters["access_token"] as? String {
+                self.accessToken = accessToken
+            }
+        }
+    }
+    
+
+    func application(_ app: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey: Any] = [:]) -> Bool {
+        oauth?.handleRedirectURL(url)
+        return true
     }
 
 
